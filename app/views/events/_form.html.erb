@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :certificate_template, style: "display: block" %>
-    <%= form.select :certificate_template, Event::CERTIFICATE_TEMPLATES, selected: params[:template], include_blank: true %>
+    <%= form.select :certificate_template, Event::CERTIFICATE_TEMPLATES, selected: (params[:template] || event.certificate_template), include_blank: true %>
   </div>
 
   <div>
