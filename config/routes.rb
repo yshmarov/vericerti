@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'certificate_templates/classic'
   get 'certificate_templates/modern'
   devise_for :users
