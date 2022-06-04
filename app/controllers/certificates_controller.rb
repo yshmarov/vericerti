@@ -22,6 +22,6 @@ class CertificatesController < ApplicationController
   private
 
   def set_certificate
-    @certificate = Certificate.find(params[:id])
+    @certificate = Certificate.friendly.find(params[:id])
   end
 end

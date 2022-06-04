@@ -15,7 +15,7 @@ class GenerateQr < ApplicationService
     # https://vericerti.com/certificates/5.pdf
     qr_url = url_for(controller: 'certificates',
                      action: 'show',
-                     id: "#{certificate.id}.pdf",
+                     id: "#{certificate.slug}.pdf",
                      host: 'vericerti.com',
                      only_path: false)
 

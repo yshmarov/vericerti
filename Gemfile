@@ -83,3 +83,5 @@ gem 'aws-sdk-s3', require: false
 
 gem 'caxlsx'
 gem 'caxlsx_rails'
+
+gem "friendly_id", "~> 5.4"
