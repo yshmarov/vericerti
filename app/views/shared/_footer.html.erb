@@ -1,18 +1,19 @@
 <footer>
-  Warsaw Legal Hackathon 2022
   <div>
-    <%= link_to "Home", root_path %>
+    <%= link_to "⚡ Start", root_path %>
   </div>
   <div>
-    <%= link_to "Pricing", pricing_path %>
+    <%= link_to "💰 Pricing", pricing_path %>
   </div>
   <div>
-    <%= link_to "Template: Classic", certificate_templates_classic_path(format: :pdf) %>
+    Proudly created in 48 hours at
+    <%= link_to "Warsaw Legal Hackathon 2022", "https://www.wolterskluwer.com/pl-pl/solutions/global-legal-hackathon/rejestracja-legal-hackathon", target: :_blank %>
   </div>
   <div>
-    <%= link_to "Template: Modern", certificate_templates_modern_path(format: :pdf) %>
+    <%= mail_to "yshmarov@gmail.com", "Email us" %>
   </div>
   <div>
-    <%= link_to "Template: Language Certificate", certificate_templates_language_certificate_path(format: :pdf) %>
+    <%= link_to "Twitter", "https://twitter.com/yarotheslav", target: :_blank %>
   </div>
+  <%= render 'shared/paypal' %>
 </footer>

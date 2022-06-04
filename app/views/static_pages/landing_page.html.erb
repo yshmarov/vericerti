@@ -1,5 +1,11 @@
-<h1>Select a template</h1>
+<article>
+<h3>
+  📄 1. Select a template
+</h3>
 
+<%#= link_to "Template: Classic", certificate_templates_classic_path(format: :pdf) %>
+<%#= link_to "Template: Modern", certificate_templates_modern_path(format: :pdf) %>
+<%#= link_to "Template: Language Certificate", certificate_templates_language_certificate_path(format: :pdf) %>
 <% Event::CERTIFICATE_TEMPLATES.each do |certificate_template| %>
   <%= link_to new_event_path(template: certificate_template) do %>
     <div>
@@ -7,3 +13,58 @@
     </div>
   <% end %>
 <% end %>
+</article>
+
+<br>
+
+<article>
+<h3>
+  ✍️ 2. Fill in missing information
+</h3>
+
+<ul>
+  <li>
+    Your company info (name, logo, website)
+  </li>
+  <li>
+    Template-specific fields
+  </li>
+  <li>
+    Connect your digital seal (or use ours)
+  </li>
+</ul>
+</article>
+
+<br>
+
+<article>
+<h3>
+  📥 3. Upload recipient list
+</h3>
+
+<ul>
+  <li>
+    name
+  </li>
+  <li>
+    email (to send a copy)
+  </li>
+  <li>
+    other recepient-specific data
+  </li>
+</ul>
+</article>
+
+<br>
+
+<article>
+<h3>
+  🎆 4. Profit!
+</h3>
+
+<ul>
+  <li>
+    Unique PDF certificates are automatically emailed to each recepient
+  </li>
+</ul>
+</article>
