@@ -1,11 +1,7 @@
 class CertificatesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!
 
-  before_action :set_certificate, only: %i[show edit update destroy]
-
-  def index
-    @certificates = current_user.certificates
-  end
+  before_action :set_certificate
 
   def show
     respond_to do |format|
@@ -23,29 +19,9 @@ class CertificatesController < ApplicationController
     end
   end
 
-  def new
-    @certificate = Certificate.new
-  end
-
-  def create
-    @certificate = Certificate.new(certificate_params)
-
-    respond_to do |format|
-      if @certificate.save
-        format.html { redirect_to certificate_url(@certificate), notice: 'Certificate was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
-    end
-  end
-
   private
 
   def set_certificate
     @certificate = current_user.certificates.find(params[:id])
-  end
-
-  def certificate_params
-    params.require(:certificate).permit(:event_id, :name, :email, :description)
   end
 end

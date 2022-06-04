@@ -2,3 +2,9 @@
 
 Certificates:
 <%= @event.certificates.count %>
+
+<div id="certificates">
+  <% @event.certificates.each do |certificate| %>
+    <%= render certificate %>
+  <% end %>
+</div>

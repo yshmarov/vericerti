@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :certificates
+  resources :certificates, only: :show
   resources :events do
     member do
       # get :export
