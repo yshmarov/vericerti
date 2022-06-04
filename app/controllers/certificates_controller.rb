@@ -4,7 +4,7 @@ class CertificatesController < ApplicationController
   before_action :set_certificate, only: %i[show edit update destroy]
 
   def index
-    @certificates = Certificate.all
+    @certificates = current_user.certificates
   end
 
   def show
@@ -42,7 +42,7 @@ class CertificatesController < ApplicationController
   private
 
   def set_certificate
-    @certificate = Certificate.find(params[:id])
+    @certificate = current_user.certificates.find(params[:id])
   end
 
   def certificate_params

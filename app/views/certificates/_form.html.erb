@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :event_id, style: "display: block" %>
-    <%= form.select :event_id, Event.pluck(:id) %>
+    <%= form.select :event_id, current_user.events.pluck(:id) %>
   </div>
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, autocomplete: "off" %>
   </div>
 
   <div>
