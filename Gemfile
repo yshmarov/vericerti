@@ -72,3 +72,7 @@ group :test do
 end
 
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary', group: :development
+gem 'wkhtmltopdf-heroku', group: :production
