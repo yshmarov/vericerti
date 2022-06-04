@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_event, only: %i[show edit update destroy import_certs]
 
   def index
     @events = current_user.events
@@ -9,6 +9,15 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.new
+  end
+
+  def import_certs
+    redirect_to(event_path(@event)) and return if params[:file].nil?
+
+    @event.certificates.destroy_all
+    @event.import(params[:file])
+
+    redirect_to event_path(@event), notice: 'Import done!'
   end
 
   def edit; end

@@ -26,4 +26,10 @@
   <%= link_to "Edit", edit_event_path(event) %>
   <%= button_to "Destroy", event, method: :delete %>
 
+  <hr>
+  <%= form_tag import_certs_event_path(event), method: :post, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Start importing CSV' %>
+  <% end %>
+
 </article>
