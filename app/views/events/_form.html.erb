@@ -1,15 +1,5 @@
 <%= form_with(model: event) do |form| %>
-  <% if event.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/errors', form: form %>
 
   <div>
     <%= form.label :certificate_template, style: "display: block" %>
@@ -17,16 +7,16 @@
   </div>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, autocomplete: "off" %>
+    <%= form.label :name_field, style: "display: block" %>
+    <%= form.text_field :name, autocomplete: "off", placeholder: "What happened?" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.label :description_field, style: "display: block" %>
+    <%= form.text_area :description, placeholder: "Describe what happened" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Submit" %>
   </div>
 <% end %>

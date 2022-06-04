@@ -1,25 +1,32 @@
 <blockquote id="<%= dom_id certificate %>">
   <p>
-    <strong>Event:</strong>
-    <%= certificate.event_id %>
+    <strong>ID:</strong>
+    <%= certificate.slug %>
   </p>
 
   <p>
-    <strong>Name:</strong>
-    <%= certificate.name %>
+    <strong>Name field:</strong>
+    <kbd>
+      <%= certificate.name %>
+    </kbd>
   </p>
 
   <p>
-    <strong>Email:</strong>
-    <%= certificate.email %>
+    <strong>Email field:</strong>
+    <kbd>
+      <%= certificate.email %>
+    </kbd>
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%= certificate.description %>
+    <strong>Description field:</strong>
+    <kbd>
+      <%= certificate.description %>
+    </kbd>
   </p>
 
+  <p>
+    <%= link_to "View generated PDF", certificate_path(certificate, format: :pdf) %>
+  </p>
   <%= image_tag(certificate.qr_code) if certificate.qr_code.attached? %>
-
-  <%= link_to "PDF", certificate_path(certificate, format: :pdf) %>
 </blockquote>

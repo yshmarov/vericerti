@@ -20,3 +20,26 @@ a:link {
 a {
   text-decoration: none;
 }
+
+#notice {
+  background-color: green;
+  color: white;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+#alert {
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+#error_explanation {
+  color: red;
+  border: 2px solid red;
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 6px;
+  word-break: break-word;
+}

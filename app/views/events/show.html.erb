@@ -1,7 +1,29 @@
 <%= render @event %>
 
-Certificates:
-<%= @event.certificates.count %>
+<%= link_to "Edit template", edit_event_path(@event) %>
+<%= button_to "Destroy template", @event, method: :delete, disabled: @event.certificates.any? %>
+
+<article>
+  <h4>
+    Upload a CSV with recepient data to generate certificates
+  </h4>
+  <%= link_to controller: "certificate_templates", action: @event.certificate_template, format: :xlsx, target: :_blank do %>
+    1. Download <%= @event.certificate_template.humanize %> CSV template
+  <% end %>
+
+  <hr>
+
+  2. Upload the CSV with data
+  <%= form_tag import_certs_event_path(@event), method: :post, multipart: true do %>
+    <%= file_field_tag :file, accept: ".csv" %>
+    <%= submit_tag 'Generate certificates' %>
+  <% end %>
+</article>
+
+<h3>
+  Generated certificates:
+  <%= @event.certificates.count %>
+</h3>
 
 <div id="certificates">
   <% @event.certificates.each do |certificate| %>
