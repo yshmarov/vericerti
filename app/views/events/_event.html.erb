@@ -1,11 +1,11 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>User:</strong>
-    <%= event.user_id %>
-  </p>
+<article id="<%= dom_id event %>">
+  <%= link_to event do %>
+    <strong>ID #</strong>
+    <%= event.id %>
+  <% end %>
 
   <p>
-    <strong>Certificate template:</strong>
+    <strong>Template:</strong>
     <%= event.certificate_template %>
   </p>
 
@@ -19,4 +19,11 @@
     <%= event.description %>
   </p>
 
-</div>
+  <p>
+    <%= event.created_at %>
+  </p>
+
+  <%= link_to "Edit", edit_event_path(event) %>
+  <%= button_to "Destroy", event, method: :delete %>
+
+</article>

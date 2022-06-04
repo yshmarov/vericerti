@@ -20,4 +20,6 @@
   </p>
 
   <%= image_tag(certificate.qr_code) if certificate.qr_code.attached? %>
+
+  <%= link_to "PDF", certificate_path(certificate, format: :pdf) %>
 </div>
