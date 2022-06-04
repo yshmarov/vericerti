@@ -12,13 +12,12 @@ class GenerateQr < ApplicationService
   require 'rqrcode'
 
   def call
-    # https://superails.com/certificates/5?abc=d+e+f
+    # https://vericerti.com/certificates/5.pdf
     qr_url = url_for(controller: 'certificates',
                      action: 'show',
-                     id: certificate.id,
+                     id: "#{certificate.id}.pdf",
                      host: 'vericerti.com',
-                     only_path: false,
-                     abc: 'd e f')
+                     only_path: false)
 
     # generate QR code
     qr_code = RQRCode::QRCode.new(qr_url)
