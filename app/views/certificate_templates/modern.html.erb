@@ -3,3 +3,4 @@
 <%= @certificate.event.user.attributes %>
 <%= @certificate.event.attributes %>
 <%= @certificate.attributes %>
+<%= image_tag(@certificate.qr_code) if @certificate.qr_code.attached? %>

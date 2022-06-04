@@ -76,3 +76,5 @@ gem 'devise', github: 'heartcombo/devise', branch: 'main'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary', group: :development
 gem 'wkhtmltopdf-heroku', group: :production
+
+gem 'rqrcode', '~> 2.1'
