@@ -7,13 +7,28 @@
   </div>
 
   <div>
+    <%= form.label :organization_name, style: "display: block" %>
+    <%= form.text_field :organization_name, autocomplete: "off", placeholder: "Name of certificate issuer organization" %>
+  </div>
+
+  <div>
+    <%= form.label :logo_url, style: "display: block" %>
+    <%= form.text_field :logo_url, autocomplete: "off", placeholder: "Link to organization logo" %>
+  </div>
+
+  <div>
+    <%= form.label :website_url, style: "display: block" %>
+    <%= form.text_field :website_url, autocomplete: "off", placeholder: "Link to organization website" %>
+  </div>
+
+  <div>
     <%= form.label :name_field, style: "display: block" %>
-    <%= form.text_field :name, autocomplete: "off", placeholder: "What happened?" %>
+    <%= form.text_field :name, autocomplete: "off", placeholder: "Occasion name" %>
   </div>
 
   <div>
     <%= form.label :description_field, style: "display: block" %>
-    <%= form.text_area :description, placeholder: "Describe what happened" %>
+    <%= form.text_area :description, placeholder: "Occasion description" %>
   </div>
 
   <div>

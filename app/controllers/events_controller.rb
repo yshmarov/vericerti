@@ -58,6 +58,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:certificate_template, :name, :description)
+    params.require(:event).permit(:certificate_template, :name, :description, :organization_name, :website_url,
+                                  :logo_url)
   end
 end
