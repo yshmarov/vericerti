@@ -1,2 +1,9 @@
-<h1>StaticPages#landing_page</h1>
-<p>Find me in app/views/static_pages/landing_page.html.erb</p>
+<h1>Select a template</h1>
+
+<% Event::CERTIFICATE_TEMPLATES.each do |certificate_template| %>
+  <%= link_to new_event_path(template: certificate_template) do %>
+    <div>
+      <%= certificate_template.to_s.humanize %>
+    </div>
+  <% end %>
+<% end %>
