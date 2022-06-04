@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     redirect_to(event_path(@event)) and return if params[:file].nil?
 
     @event.certificates.destroy_all
-    @event.import(params[:file])
+    CsvImportService.new.import(@event, params[:file])
 
     redirect_to event_path(@event), notice: 'Import done!'
   end
