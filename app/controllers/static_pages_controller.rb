@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
-  def landing_page
-  end
+  skip_before_action :authenticate_user!
 
-  def pricing
-  end
+  def landing_page; end
+
+  def pricing; end
 end

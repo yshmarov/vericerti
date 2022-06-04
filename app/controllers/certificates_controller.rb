@@ -1,4 +1,6 @@
 class CertificatesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   before_action :set_certificate, only: %i[show edit update destroy]
 
   def index
