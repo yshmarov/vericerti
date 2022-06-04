@@ -37,7 +37,7 @@
   Upload CSV
 
   <%= form_tag import_certs_event_path(event), method: :post, multipart: true do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :file, accept: ".csv" %>
     <%= submit_tag 'Generate certificates' %>
   <% end %>
 
