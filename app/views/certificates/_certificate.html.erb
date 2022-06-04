@@ -1,4 +1,4 @@
-<div id="<%= dom_id certificate %>">
+<blockquote id="<%= dom_id certificate %>">
   <p>
     <strong>Event:</strong>
     <%= certificate.event_id %>
@@ -22,4 +22,4 @@
   <%= image_tag(certificate.qr_code) if certificate.qr_code.attached? %>
 
   <%= link_to "PDF", certificate_path(certificate, format: :pdf) %>
-</div>
+</blockquote>
