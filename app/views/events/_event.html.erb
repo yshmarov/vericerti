@@ -27,9 +27,18 @@
   <%= button_to "Destroy", event, method: :delete %>
 
   <hr>
+
+  <%= link_to controller: "certificate_templates", action: event.certificate_template, format: :xlsx, target: :_blank do %>
+    Download <%= event.certificate_template.humanize %> CSV template
+  <% end %>
+
+  <hr>
+
+  Upload CSV
+
   <%= form_tag import_certs_event_path(event), method: :post, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag 'Start importing CSV' %>
+    <%= submit_tag 'Generate certificates' %>
   <% end %>
 
 </article>

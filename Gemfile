@@ -80,3 +80,6 @@ gem 'wkhtmltopdf-heroku', group: :production
 gem 'rqrcode', '~> 2.1'
 
 gem 'aws-sdk-s3', require: false
+
+gem 'caxlsx'
+gem 'caxlsx_rails'

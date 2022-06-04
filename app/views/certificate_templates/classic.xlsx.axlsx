@@ -1,0 +1,5 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: @title) do |sheet|
+  sheet.add_row ['name', 'email', 'description']
+end

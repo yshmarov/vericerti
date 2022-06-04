@@ -21,8 +21,13 @@ class CertificateTemplatesController < ApplicationController
   def set_responce_format
     respond_to do |format|
       format.html
+      format.xlsx do
+        @title = action_name
+        render xlsx: action_name, template: "#{controller_name}/#{action_name}"
+      end
       format.pdf do
         render pdf: [controller_name, action_name].join('-'),
+               #  a template variant could be introduced here
                #  template: 'layouts/classic',
                formats: [:html],
                disposition: :inline,
