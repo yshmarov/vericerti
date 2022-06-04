@@ -1,7 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
+  has_many :certificates
 
-  CERTIFICATE_TEMPLATES = [:classic, :modern]
+  CERTIFICATE_TEMPLATES = %i[classic modern]
 
   validates :name, presence: true
   validates :description, presence: true
