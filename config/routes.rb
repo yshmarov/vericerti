@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'pricing', to: 'static_pages#pricing'
 
-  get 'certificate_templates/classic'
-  get 'certificate_templates/modern'
+  get 'certificate_templates/employment_certificate'
+  get 'certificate_templates/tech_hackathon'
   get 'certificate_templates/language_certificate'
 end

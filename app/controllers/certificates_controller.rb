@@ -10,8 +10,8 @@ class CertificatesController < ApplicationController
         # wrapper pdf.html, inside - template-specific stuff
         render pdf: [@certificate.id, @certificate.name].join('-'),
                template: "certificate_templates/#{@certificate.event.certificate_template}",
-               # template: 'certificate_templates/classic',
-               #  template: 'layouts/classic',
+               # template: 'certificate_templates/employment_certificate',
+               #  template: 'layouts/employment_certificate',
                formats: [:html],
                disposition: :inline,
                layout: 'pdf'
