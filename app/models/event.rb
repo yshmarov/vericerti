@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   has_many :certificates, dependent: :destroy
 
   # move to templates model or controller
-  CERTIFICATE_TEMPLATES = %i[classic modern language_certificate]
+  CERTIFICATE_TEMPLATES = %i[language_certificate modern classic]
 
   validates :name, presence: true
   validates :description, presence: true

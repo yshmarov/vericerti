@@ -10,6 +10,8 @@
   <%= link_to new_event_path(template: certificate_template) do %>
     <div>
       <%= certificate_template.to_s.humanize %>
+      <br>
+      <%= image_tag CertificateTemplatesController::TEMPLATE_IMAGES[certificate_template.to_sym], style: "max-width: 300px;" %>
     </div>
   <% end %>
 <% end %>

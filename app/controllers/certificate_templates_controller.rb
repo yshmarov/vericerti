@@ -4,6 +4,12 @@ class CertificateTemplatesController < ApplicationController
   before_action :set_certificate
   before_action :set_responce_format
 
+  TEMPLATE_IMAGES = {
+    language_certificate: 'https://i.imgur.com/0sfHLNy.png',
+    modern: 'https://i.imgur.com/F8FrHZl.jpg',
+    classic: 'https://i.imgur.com/IzE2RiR.png'
+  }
+
   def classic; end
 
   def modern; end
