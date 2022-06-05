@@ -1,5 +1,19 @@
-<h1>A certificate has been generated for you!</h1>
-
 <p>
-  <%= @certificate.attributes %>, find me in app/views/certificate_mailer/certificate.html.erb
+Dear <b><%= @certificate.name.humanize.capitalize %></b>,
+</p>
+<p>
+  You have been herebly issued a <%= link_to "VeriCerti", "https://vericerti.com/", target: :_blank %> certificate
+  by <b><%= @certificate.event.user.email %></b>
+  on behalf of <%= link_to @certificate.event.organization_name, @certificate.event.website_url, target: :_blank %>.
+</p>
+<p>
+  To view the certificate, please click the safe link below
+</p>
+<p>
+  <%= link_to "View generated PDF", certificate_url(@certificate, format: :pdf), target: :_blank %>
+</p>
+<p>
+  Kind regards,
+  <br>
+  the VeriCerti team
 </p>
