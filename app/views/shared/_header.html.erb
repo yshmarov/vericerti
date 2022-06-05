@@ -9,10 +9,10 @@
     <%= link_to '💰 Pricing', pricing_path %>
     <% if signed_in? %>
       <%= link_to events_path do %>
-        📄 My Templates:
+        📄 My templates:
         <%= current_user.events.count %>
       <% end %>
-      <%= link_to current_user.email, edit_user_registration_path %>
+      <%= link_to "👤 #{current_user.email}", edit_user_registration_path %>
       <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
     <% else %>
       <%= link_to "👤 Log in", new_user_session_path %>

@@ -3,10 +3,10 @@
   📄 1. Select a template
 </h3>
 
-<%#= link_to "Template: Classic", certificate_templates_classic_path(format: :pdf) %>
-<%#= link_to "Template: Modern", certificate_templates_modern_path(format: :pdf) %>
-<%#= link_to "Template: Language Certificate", certificate_templates_language_certificate_path(format: :pdf) %>
 <% Event::CERTIFICATE_TEMPLATES.each do |certificate_template| %>
+  <%#= link_to controller: "certificate_templates", action: certificate_template, format: :pdf, target: :_blank do %>
+    <%#= certificate_template %>
+  <%# end %>
   <%= link_to new_event_path(template: certificate_template) do %>
     <div>
       <%= certificate_template.to_s.humanize %>

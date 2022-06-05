@@ -16,7 +16,7 @@
   2. Upload the CSV with data
   <%= form_tag import_certs_event_path(@event), method: :post, multipart: true do %>
     <%= file_field_tag :file, accept: ".csv" %>
-    <%= submit_tag 'Generate certificates' %>
+    <%= submit_tag '⚙️ Generate certificates' %>
   <% end %>
 </article>
 

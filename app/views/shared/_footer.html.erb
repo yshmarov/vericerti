@@ -6,14 +6,15 @@
     <%= link_to "💰 Pricing", pricing_path %>
   </div>
   <div>
-    Proudly created in 48 hours at
-    <%= link_to "Warsaw Legal Hackathon 2022", "https://www.wolterskluwer.com/pl-pl/solutions/global-legal-hackathon/rejestracja-legal-hackathon", target: :_blank %>
-  </div>
-  <div>
     <%= mail_to "yshmarov@gmail.com", "Email us" %>
   </div>
   <div>
     <%= link_to "Twitter", "https://twitter.com/yarotheslav", target: :_blank %>
   </div>
+  <div>
+    Proudly created in 48 hours at
+    <%= link_to "Warsaw Legal Hackathon 2022", "https://www.wolterskluwer.com/pl-pl/solutions/global-legal-hackathon/rejestracja-legal-hackathon", target: :_blank %>
+  </div>
+  <hr>
   <%= render 'shared/paypal' %>
 </footer>
