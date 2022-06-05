@@ -23,7 +23,9 @@ class CsvImportService
         description = formatted_row.third
 
         # create child based on above parsed data
-        event.certificates.create(name:, email:, description:)
+        certificate = event.certificates.create(name:, email:, description:)
+        # send email
+        CertificateMailer.with(certificate:).certificate.deliver_later
       end
       #   # subreddit_hash['Name'] = row[0].to_s # Name bug`s
       #   # row['Tags'] ||= ' - '
