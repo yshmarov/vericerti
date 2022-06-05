@@ -6,13 +6,13 @@ class CertificateTemplatesController < ApplicationController
 
   TEMPLATE_IMAGES = {
     language_certificate: 'https://i.imgur.com/0sfHLNy.png',
-    tech_hackathon: 'https://i.imgur.com/F8FrHZl.jpg',
-    employment_certificate: 'https://i.imgur.com/IzE2RiR.png'
+    modern: 'https://i.imgur.com/F8FrHZl.jpg',
+    classic: 'https://i.imgur.com/IzE2RiR.png'
   }
 
-  def employment_certificate; end
+  def classic; end
 
-  def tech_hackathon; end
+  def modern; end
 
   def language_certificate; end
 
@@ -34,7 +34,7 @@ class CertificateTemplatesController < ApplicationController
       format.pdf do
         render pdf: [controller_name, action_name].join('-'),
                #  a template variant could be introduced here
-               #  template: 'layouts/employment_certificate',
+               #  template: 'layouts/classic',
                formats: [:html],
                disposition: :inline,
                layout: 'pdf'
