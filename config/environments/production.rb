@@ -1,19 +1,29 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
-  config.action_mailer.smtp_settings = {
-    port: 587,
-    domain: 'vericerti.com',
-    address: Rails.application.credentials.dig(:smtp, :address),
-    user_name: Rails.application.credentials.dig(:smtp, :user_name),
-    password: Rails.application.credentials.dig(:smtp, :password),
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
-
   config.action_mailer.default_url_options = { host: 'vericerti.com', protocol: 'https' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
+
+  # config.action_mailer.smtp_settings = {
+  #   port: 587,
+  #   domain: 'vericerti.com',
+  #   address: Rails.application.credentials.dig(:smtp, :address),
+  #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
+  #   password: Rails.application.credentials.dig(:smtp, :password),
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'vericerti.com',
+    user_name: Rails.application.credentials.dig(:gmail_smtp, :email),
+    password: Rails.application.credentials.dig(:gmail_smtp, :password),
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
